@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://creative-coding.decontextualize.com/making-games-with-p5-play/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="author" content="Allison Parrish">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Making Games with p5.play (Creative Coding)
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./Making Games with p5.play (Creative Coding)_files/poole.css">
+  <link rel="stylesheet" href="./Making Games with p5.play (Creative Coding)_files/syntax.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://creative-coding.decontextualize.com/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="https://creative-coding.decontextualize.com/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/atom+xml" title="Creative Coding" href="https://creative-coding.decontextualize.com/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="container content">
+      <main>
+        <article class="page">
+  <h1 class="page-title">Making Games with p5.play</h1>
+  <p>By <a href="http://www.decontextualize.com/">Allison Parrish</a></p>
+
+<p>In this tutorial, I’m going to take you through Paolo Pedercini’s
+<a href="http://p5play.molleindustria.org/">p5.play</a> library. This is a very
+opinionated introduction, and it leaves out a lot of the functionality that
+makes p5.play interesting! Be sure to <a href="http://p5play.molleindustria.org/examples/index.html">consult the official
+examples</a> and (reference
+documentation)[http://p5play.molleindustria.org/docs/index.html] to get a sense
+of everything that the library can do.</p>
+
+<p>The p5.play library provides a number of helpful objects and functions for
+making games and other interactive applications. The objects and functions it
+introduces are incorporated into p5.js just as though they were pre-programmed
+in the library.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p><a href="https://github.com/molleindustria/p5.play/archive/master.zip">Download the library
+here</a>. Unzip the
+archive. You’ll find a directory in the archive called <code>lib</code>; copy the
+<code>p5.play.js</code> file from that directory into your own sketch’s <code>libraries</code>
+directory. Make sure to add the necessary <code>&lt;script&gt;</code> tag to your sketch’s
+<code>index.html</code> file as well. (<a href="https://creative-coding.decontextualize.com/external-libraries/">More information here about installing external
+libraries when using the p5.js editor</a>.)</p>
+
+<h2 id="sprites">Sprites</h2>
+
+<p>A “sprite” is an object in a game (or other interactive application) that knows
+its own size and position on the screen. Sprite objects typically expose an
+interface that allows the programmer to change the sprite’s position,
+trajectory and appearance, and to allow the programmer to easily ask questions
+about the sprite, such as if it intersects a particular position (or another
+sprite).</p>
+
+<h3 id="a-single-sprite">A single sprite</h3>
+
+<p>Creating a sprite in p5.play is accomplished using the <code>createSprite()</code>
+function. This function returns a sprite object, which itself has a number of
+attributes and methods that allow us to query and change properties of the
+sprite.</p>
+
+<p>Here’s a simple example that creates a single sprite:</p>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprite">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprite">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var spr;
+function setup() {
+  createCanvas(400, 400);
+  spr = createSprite(
+    width/2, height/2, 40, 40);
+  spr.shapeColor = color(255);
+  spr.velocity.y = 0.5;
+}
+function draw() {
+  background(50);
+  drawSprites();
+}
+function mousePressed() {
+  spr.position.x = mouseX;
+  spr.position.y = mouseY;
+}
+</pre>
+<div id="11_sprite" class="example-container" data-sketch-src="/sketches/11_sprite.html">
+</div>
+</div>
+
+<p>The <code>createSprite()</code> function takes four parameters: the position of the
+sprite, and its width and height. The <code>.shapeColor</code> attribute sets the color of
+the rectangle that represents the sprite. In order for p5.play to display the
+sprite, we need to add the <code>drawSprites()</code> function to the end of <code>draw()</code>.</p>
+
+<p>Every sprite has a <code>position</code> attribute and a <code>velocity</code> attribute. Both of
+those attributes have <code>x</code> and <code>y</code> attributes, which you can set to control the
+position of the sprite and its velocity (in both dimensions). The p5.play
+library takes care of updating the position according to the velocity for
+you—you don’t have to do any of the math. In the example above, the
+sprite is constantly moving downwards, unless you click the mouse, in which
+case the sprite is instantly moved to the mouse position.</p>
+
+<h3 id="sprites-on-the-move">Sprites on the move</h3>
+
+<p>As mentioned above, you can set the sprite’s velocity directly with
+<code>.velocity.x</code> and <code>.velocity.y</code>. You can also call the sprite’s <code>setSpeed()</code>
+attribute to tell the sprite to move in a particular direction at a particular
+rate. In this example, use the arrow keys to control the sprite:</p>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprite_speed">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprite_speed">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var spr;
+function setup() {
+  createCanvas(400, 400);
+  spr = createSprite(
+    width/2, height/3, 40, 40);
+  spr.shapeColor = color(255);
+}
+function draw() {
+  background(50);
+  fill(255);
+  noStroke();
+  textAlign(CENTER, CENTER);
+  text("use arrow keys, or SPACE to stop",
+    width/2, height*0.67);
+  drawSprites();
+}
+function keyPressed() {
+  if (keyCode == RIGHT_ARROW) {
+    spr.setSpeed(1.5, 0);
+  }
+  else if (keyCode == DOWN_ARROW) {
+    spr.setSpeed(1.5, 90);
+  }
+  else if (keyCode == LEFT_ARROW) {
+    spr.setSpeed(1.5, 180);
+  }
+  else if (keyCode == UP_ARROW) {
+    spr.setSpeed(1.5, 270);
+  }
+  else if (key == ' ') {
+    spr.setSpeed(0, 0);
+  }
+  return false;
+}
+</pre>
+<div id="11_sprite_speed" class="example-container" data-sketch-src="/sketches/11_sprite_speed.html">
+</div>
+</div>
+
+<p>(The <code>key</code> variable in p5.js only works for alphanumeric characters. In order
+to detect the arrow keys, we need to use the
+<a href="http://p5js.org/reference/#/p5/keyCode">keyCode</a> variable.)</p>
+
+<p>Adding gravity to your sketch is as easy as adding a constant downward force on
+every frame (using the <code>.setSpeed()</code> method). Here’s an example that causes a
+sprite to be drawn to the screen, which moves downward on every frame and then
+bounces when it reaches the bottom:</p>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprite_gravity">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprite_gravity">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var spr;
+function setup() {
+  createCanvas(400, 400);
+  spr = createSprite(width/2, height/2,
+    40, 40);
+  spr.shapeColor = color(255);
+  spr.velocity.y = 0;
+}
+function draw() {
+  background(50);
+  if (spr.position.y &gt;= height) {
+    spr.velocity.y *= -1;
+    // set to height to prevent "tunneling"
+    spr.position.y = height;
+  }
+  // constant downward speed
+  // (i.e., gravity)
+  spr.addSpeed(0.25, 90);
+  drawSprites();
+}
+function mousePressed() {
+  spr.position.y = mouseY;
+}
+</pre>
+<div id="11_sprite_gravity" class="example-container" data-sketch-src="/sketches/11_sprite_gravity.html">
+</div>
+</div>
+
+<h3 id="following-the-mouse">Following the mouse</h3>
+
+<p>There are a number of ways to make a sprite follow the mouse. The first is to
+set the position directly:</p>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprite_follow_direct">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprite_follow_direct">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var spr;
+function setup() {
+  createCanvas(400, 400);
+  spr = createSprite(
+    width/2, height/2, 40, 40);
+  spr.shapeColor = color(255);
+}
+function draw() {
+  background(50);
+  spr.position.x = mouseX;
+  spr.position.y = mouseY;
+  drawSprites();
+}
+</pre>
+<div id="11_sprite_follow_direct" class="example-container" data-sketch-src="/sketches/11_sprite_follow_direct.html">
+</div>
+</div>
+
+<p>You can also add a bit of lag to the sprite’s movement by setting the X and Y
+velocity to the difference between the sprite’s position and the mouse’s
+position:</p>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprite_follow_velocity">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprite_follow_velocity">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var spr;
+function setup() {
+  createCanvas(400, 400);
+  spr = createSprite(
+    width/2, height/2, 40, 40);
+  spr.shapeColor = color(255);
+}
+function draw() {
+  background(50);
+  spr.velocity.x = (mouseX - spr.position.x) * 0.2;
+  spr.velocity.y = (mouseY - spr.position.y) * 0.2;
+  drawSprites();
+}
+</pre>
+<div id="11_sprite_follow_velocity" class="example-container" data-sketch-src="/sketches/11_sprite_follow_velocity.html">
+</div>
+</div>
+
+<p>Finally, you can use the <code>.attractionPoint()</code> method to set a force that pushes
+the sprite in the direction of the mouse’s position:</p>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprite_attraction_point">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprite_attraction_point">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var spr;
+function setup() {
+  createCanvas(400, 400);
+  spr = createSprite(
+    width/2, height/2, 40, 40);
+  spr.shapeColor = color(255);
+  spr.rotateToDirection = true;
+  spr.maxSpeed = 2;
+  spr.friction = 0.99;
+}
+function draw() {
+  background(50);
+  if (mouseIsPressed) {
+    spr.attractionPoint(0.5, mouseX, mouseY);
+  }
+  drawSprites();
+}
+</pre>
+<div id="11_sprite_attraction_point" class="example-container" data-sketch-src="/sketches/11_sprite_attraction_point.html">
+</div>
+</div>
+
+<p>In this example, we also set the object’s <code>.maxSpeed</code> attribute (which controls
+how fast a sprite can move, regardless of the forces operating on it), its
+<code>.friction</code> attribute (which is a multiplier that slowly reduces the velocity
+of the object on each frame), and the <code>.rotateToDirection</code> attribute (which,
+when set to <code>true</code>, causes the object to rotate to the direction it’s moving).</p>
+
+<p>Examples follow, more narrative notes TK!</p>
+
+<h3 id="mouse-events">Mouse events</h3>
+
+<p>Sprites in the p5.play framework come with a built-in mechanism for detecting
+whether or not the user is interacting with the sprite using the mouse.
+There are two ways to check for mouse interaction: callbacks or boolean
+attributes.</p>
+
+<p>There are four attributes of a sprite object that you can assign functions to
+in order to define the sprite’s behavior in relation to the user’s mouse
+movement. The following example illustrates all four:</p>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprite_events">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprite_events">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var spr1;
+var spr2;
+function setup() {
+  createCanvas(400, 400);
+
+  spr1 = createSprite(width/2, height/3,
+    100, 100);
+  spr1.shapeColor = color(255);
+  spr1.onMouseOver = function() {
+    this.scale = 2;
+  }
+  spr1.onMouseOut = function() {
+    this.scale = 1;
+  }
+
+  spr2 = createSprite(width/2, height*0.67,
+    100, 100);
+  spr2.shapeColor = color(0);
+  spr2.onMousePressed = function() {
+    this.shapeColor = color(128);
+  }
+  spr2.onMouseReleased = function() {
+    this.shapeColor = color(0);
+  }
+}
+function draw() {
+  background(50);
+  drawSprites();
+}
+</pre>
+<div id="11_sprite_events" class="example-container" data-sketch-src="/sketches/11_sprite_events.html">
+</div>
+</div>
+
+<p>The four attributes are:</p>
+
+<ul>
+  <li><code>onMouseOver</code> (when the mouse cursor moves over the object)</li>
+  <li><code>onMouseOut</code> (when the mouse cursor leaves the object)</li>
+  <li><code>onMousePressed</code> (when the user presses the mouse button, <em>and</em> the mouse
+cursor is over the object)</li>
+  <li><code>onMouseReleased</code> (when the user releases the mouse button, after an
+<code>onMousePressed</code> event)</li>
+</ul>
+
+<p>The function that you assign to these attributes will be executed whenever the
+specified event occurs. Inside the function, the expression <code>this</code> refers to
+the <em>object that the interaction happened to</em>. (This is helpful for writing
+event handlers that can be applied to more than one object; see below.)</p>
+
+<p>Every sprite object also has a <code>mouseIsOver</code> attribute, which has a boolean
+value: <code>true</code> if the mouse is currently over the object, and <code>false</code> otherwise.
+In the following example, the two sprites respond when the mouse is over them.
+(For the second sprite, the reaction behavior only happens if the mouse button
+is pressed as well.)</p>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprite_check_mouse">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprite_check_mouse">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var spr1;
+var spr2;
+function setup() {
+  createCanvas(400, 400);
+  spr1 = createSprite(width/2, height/3,
+    100, 100);
+  spr1.shapeColor = color(255);
+  spr1.mouseActive = true;
+  spr2 = createSprite(width/2, height*0.67,
+    100, 100);
+  spr2.shapeColor = color(0);
+  spr2.mouseActive = true;
+}
+function draw() {
+  background(50);
+  if (spr1.mouseIsOver) {
+    background(100);
+  }
+  if (spr2.mouseIsOver &amp;&amp; mouseIsPressed) {
+    spr2.rotation += 4;
+  }
+  drawSprites();
+}
+</pre>
+<div id="11_sprite_check_mouse" class="example-container" data-sketch-src="/sketches/11_sprite_check_mouse.html">
+</div>
+</div>
+
+<p>Note also in this example the use of the <code>.rotation</code> attribute, which sets the
+sprite’s current rotation (in degrees).</p>
+
+<h3 id="multiple-sprites">Multiple sprites</h3>
+
+<p>You can call the <code>createSprite()</code> function as many times as you want to! The
+p5.play framework keeps track of all the sprites you’ve added behind the scenes
+(so you don’t need to create your own data structure to store them). In the
+following example, I’ve written some code in <code>mousePressed()</code> that creates a
+new sprite whenever the user clicks the mouse:</p>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprites">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprites">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">function setup() {
+  createCanvas(400, 400);
+}
+function draw() {
+  background(50);
+  drawSprites();
+}
+function mousePressed() {
+  var spr = createSprite(width/2, height/2,
+    random(10, 50), random(10, 50));
+  spr.shapeColor = color(255);
+  spr.velocity.y = random(3);
+  spr.velocity.x = random(-3, 3);
+  spr.position.x = mouseX;
+  spr.position.y = mouseY;
+  spr.friction = 0.995;
+  spr.life = 120;
+}
+</pre>
+<div id="11_sprites" class="example-container" data-sketch-src="/sketches/11_sprites.html">
+</div>
+</div>
+
+<p>Note here the use of the <code>.life</code> attribute, which is the maximum number of
+frames that the sprite will “live” before it’s automatically deleted by the
+p5.play framework.</p>
+
+<p>If you want to apply changes to the sprites after they’re created, other than
+the changes that the p5.play framework performs on its own, you’ll need
+to iterate over every sprite in the <code>draw()</code> method. The framework supplies a
+built-in array called <code>allSprites</code> which contains every active sprite in the
+sketch. In the following example, we use the <code>allSprites</code> variable to apply
+“gravity” (i.e., a constant downward force) to each sprite added to the scene
+in <code>mousePressed()</code>. Another <code>if</code> statement checks to see if the sprite has
+extended beyond the height of the sketch, and causes it to “bounce” if so.
+Still another <code>if</code> statement removes any sprites that have exceeded the
+boundary of the sketch in the X dimension.</p>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprites_forces">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprites_forces">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">function setup() {
+  createCanvas(400, 400);
+}
+function draw() {
+  background(50);
+  for (var i = 0; i &lt; allSprites.length; i++) {
+    // gravity
+    allSprites[i].addSpeed(0.1, 90);
+    if (allSprites[i].position.y &gt; height) {
+      allSprites[i].velocity.y *= -1;
+    }
+    // any code that removes sprites should be
+    // the *last* thing in the loop!
+    if (allSprites[i].position.x &gt; width ||
+        allSprites[i].position.x &lt; 0) {
+      allSprites[i].remove();
+    }
+  }
+  textAlign(RIGHT, TOP);
+  text("sprite count: " + allSprites.length,
+    width-10, 10);
+  drawSprites();
+}
+function mousePressed() {
+  var spr = createSprite(width/2, height/2,
+    random(10, 50), random(10, 50));
+  spr.shapeColor = color(255);
+  spr.velocity.y = random(3);
+  spr.velocity.x = random(-3, 3);
+  spr.position.x = mouseX;
+  spr.position.y = mouseY;
+}
+</pre>
+<div id="11_sprites_forces" class="example-container" data-sketch-src="/sketches/11_sprites_forces.html">
+</div>
+</div>
+
+<p>Examples only from this point forward—more notes TK!</p>
+
+<h3 id="events-on-multiple-sprites">Events on multiple sprites</h3>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprites_multi_events">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprites_multi_events">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var score = 0;
+function setup() {
+  createCanvas(400, 400);
+  for (var i = 0; i &lt; 10; i++) {
+    var spr = createSprite(
+      random(width), random(height),
+      random(10, 50), random(10, 50));
+    spr.shapeColor = random(255);
+    spr.onMouseOver = removeAndScore;
+  }
+}
+function draw() {
+  background(50);
+  drawSprites();
+  fill(255);
+  noStroke();
+  textSize(72);
+  textAlign(CENTER, CENTER);
+  if (score &lt; 10) {
+    text(score, width/2, height/2);
+  }
+  else {
+    text("you win!", width/2, height/2);
+  }
+}
+function removeAndScore() {
+  score += 1;
+  this.remove();
+}
+</pre>
+<div id="11_sprites_multi_events" class="example-container" data-sketch-src="/sketches/11_sprites_multi_events.html">
+</div>
+</div>
+
+<ul>
+  <li>every sprite shares the same <code>removeAndScore</code> function—the <code>this</code> keyword
+keeps everything straight</li>
+</ul>
+
+<h3 id="sprite-groups">Sprite groups</h3>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprite_groups">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprite_groups">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var clouds;
+var birds;
+function setup() {
+  createCanvas(400, 400);
+  clouds = new Group();
+  birds = new Group();
+
+  for (var i = 0; i &lt; 10; i++) {
+    var c = createSprite(
+      random(width), random(height),
+      random(25, 100), random(25, 100));
+    c.shapeColor = color(random(200, 255));
+    clouds.add(c);
+  }
+  for (var i = 0; i &lt; 5; i++) {
+    var b = createSprite(
+      random(width), random(height),
+      random(10, 50), random(5, 25));
+    b.shapeColor = color(255, 0, random(255));
+    b.friction = random(0.97, 0.99);
+    b.maxSpeed = random(1, 4);
+    b.rotateToDirection = true;
+    birds.add(b);
+  }
+}
+function draw() {
+  background(0, 150, 240);
+  for (var i = 0; i &lt; clouds.length; i++) {
+    clouds[i].position.x += clouds[i].width * 0.01;
+    if (clouds[i].position.x &gt; width) {
+      clouds[i].position.x = 0;
+    }
+  }
+  for (var i = 0; i &lt; birds.length; i++) {
+    birds[i].attractionPoint(0.2, mouseX, mouseY);
+  }
+  drawSprites();
+}
+</pre>
+<div id="11_sprite_groups" class="example-container" data-sketch-src="/sketches/11_sprite_groups.html">
+</div>
+</div>
+
+<ul>
+  <li><code>Group()</code></li>
+  <li>allows you to “categorize” sprites and give them different behaviors.</li>
+</ul>
+
+<h2 id="collisions">Collisions</h2>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprite_overlap">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprite_overlap">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var spr1;
+var spr2;
+function setup() {
+  createCanvas(400, 400);
+  spr1 = createSprite(
+    width/2, height/2, 150, 150);
+  spr1.shapeColor = color(0);
+  spr2 = createSprite(0, 0, 50, 50);
+  spr2.shapeColor = color(128);
+}
+function draw() {
+  background(50);
+  spr2.velocity.x = (mouseX-spr2.position.x)*0.2;
+  spr2.velocity.y = (mouseY-spr2.position.y)*0.2;
+  if (spr2.overlap(spr1)) {
+    spr1.shapeColor = color(255);
+  }
+  else {
+    spr1.shapeColor = color(0);
+  }
+  drawSprites();
+}
+</pre>
+<div id="11_sprite_overlap" class="example-container" data-sketch-src="/sketches/11_sprite_overlap.html">
+</div>
+</div>
+
+<ul>
+  <li>the <code>.overlap()</code> method returns true if one sprite overlaps another.</li>
+</ul>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprite_collide">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprite_collide">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var spr1;
+var spr2;
+function setup() {
+  createCanvas(400, 400);
+  spr1 = createSprite(
+    width/2, height/2, 100, 100);
+  spr1.shapeColor = color(0);
+  spr2 = createSprite(0, 0, 50, 50);
+  spr2.shapeColor = color(128);
+}
+function draw() {
+  background(50);
+  spr2.velocity.x = (mouseX-spr2.position.x)*0.2;
+  spr2.velocity.y = (mouseY-spr2.position.y)*0.2;
+  spr2.collide(spr1);
+  drawSprites();
+}
+</pre>
+<div id="11_sprite_collide" class="example-container" data-sketch-src="/sketches/11_sprite_collide.html">
+</div>
+</div>
+
+<ul>
+  <li><code>.collide()</code></li>
+</ul>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_sprite_displace">► run sketch</span>
+  <span class="stop" data-sketch-id="11_sprite_displace">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var spr1;
+var spr2;
+function setup() {
+  createCanvas(400, 400);
+  spr1 = createSprite(
+    width/2, height/2, 100, 100);
+  spr1.shapeColor = color(0);
+  spr2 = createSprite(0, 0, 50, 50);
+  spr2.shapeColor = color(128);
+}
+function draw() {
+  background(50);
+  spr2.velocity.x = (mouseX-spr2.position.x)*0.2;
+  spr2.velocity.y = (mouseY-spr2.position.y)*0.2;
+  spr2.displace(spr1);
+  drawSprites();
+}
+</pre>
+<div id="11_sprite_displace" class="example-container" data-sketch-src="/sketches/11_sprite_displace.html">
+</div>
+</div>
+
+<ul>
+  <li><code>.displace()</code></li>
+</ul>
+
+<h3 id="group-collisions">Group collisions</h3>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_group_collisions">► run sketch</span>
+  <span class="stop" data-sketch-id="11_group_collisions">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var walls;
+var boxes;
+var player;
+function setup() {
+  createCanvas(400, 400);
+  walls = new Group();
+  boxes = new Group();
+  player = createSprite(100, 100, 40, 40);
+  player.shapeColor = color(255);
+  for (var i = 0; i &lt; 5; i++) {
+    var w = createSprite(
+      random(125, width-125), (height/5)*i,
+      random(10, 100), random(10, 100));
+    w.shapeColor = color(0);
+    walls.add(w);
+  }
+  for (var i = 0; i &lt; 4; i++) {
+    var b = createSprite(
+      random(50, 100), random(100, height-100),
+      25, 25);
+    b.shapeColor = color(255, 0, 0);
+    boxes.add(b);
+  }
+}
+function draw() {
+  background(50);
+  player.velocity.x = 
+    (mouseX-player.position.x)*0.1;
+  player.velocity.y = 
+    (mouseY-player.position.y)*0.1;
+  player.collide(walls);
+  player.displace(boxes);
+  boxes.collide(walls);
+  boxes.displace(boxes);
+  drawSprites();
+}
+</pre>
+<div id="11_group_collisions" class="example-container" data-sketch-src="/sketches/11_group_collisions.html">
+</div>
+</div>
+
+<h3 id="collision-callbacks">Collision callbacks</h3>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_collision_callbacks">► run sketch</span>
+  <span class="stop" data-sketch-id="11_collision_callbacks">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var coins;
+var player;
+var score = 0;
+function setup() {
+  createCanvas(400, 400);
+  coins = new Group();
+  for (var i = 0; i &lt; 10; i++) {
+    var c = createSprite(
+      random(100, width-100),
+      random(100, height-100),
+      10, 10);
+    c.shapeColor = color(255, 255, 0);
+    coins.add(c);
+  }
+  player = createSprite(50, 50, 40, 40);
+  player.shapeColor = color(255);
+}
+function draw() {
+  background(50);
+  player.velocity.x = 
+    (mouseX-player.position.x)*0.1;
+  player.velocity.y = 
+    (mouseY-player.position.y)*0.1;
+  player.overlap(coins, getCoin);
+  drawSprites();
+  fill(255);
+  noStroke();
+  textSize(72);
+  textAlign(CENTER, CENTER);
+  if (coins.length &gt; 0) {
+    text(score, width/2, height/2);
+  }
+  else {
+    text("you win!", width/2, height/2);
+  }
+}
+function getCoin(player, coin) {
+  coin.remove();
+  score += 1;
+}
+</pre>
+<div id="11_collision_callbacks" class="example-container" data-sketch-src="/sketches/11_collision_callbacks.html">
+</div>
+</div>
+
+<h2 id="images-and-animations">Images and animations</h2>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_image">► run sketch</span>
+  <span class="stop" data-sketch-id="11_image">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var kitty;
+var kittyImg;
+function preload() {
+  kittyImg = loadImage('kitty_transparent.png');
+}
+function setup() {
+  createCanvas(400, 400);
+  kitty = createSprite(width/2, height/2);
+  kitty.addImage(kittyImg);
+}
+function draw() {
+  background(255);
+  kitty.position.x = mouseX;
+  kitty.position.y = mouseY;
+  if (mouseIsPressed) {
+    kitty.rotation += 2;
+  }
+  drawSprites();
+}
+</pre>
+<div id="11_image" class="example-container" data-sketch-src="/sketches/11_image.html">
+</div>
+</div>
+
+<h3 id="animations">Animations</h3>
+
+<p>(example animation below from the p5.play examples)</p>
+
+<div class="cntrl">
+  <span class="play" data-sketch-id="11_animation">► run sketch</span>
+  <span class="stop" data-sketch-id="11_animation">◼ stop sketch</span>
+</div>
+<div class="example">
+<pre style="display: block; float: left; width: 400px;">var spr;
+var anim;
+function preload() {
+  anim = loadAnimation("asterisk_normal0001.png",
+    "asterisk_normal0002.png",
+    "asterisk_normal0003.png");
+}
+function setup() {
+  createCanvas(400, 400);
+  spr = createSprite(width/2, height/2);
+  spr.addAnimation("default", anim);
+}
+function draw() {
+  background(255);
+  spr.position.x = mouseX;
+  spr.position.y = mouseY;
+  if (mouseIsPressed) {
+    spr.rotation -= 2;
+  }
+  drawSprites();
+}
+</pre>
+<div id="11_animation" class="example-container" data-sketch-src="/sketches/11_animation.html">
+</div>
+</div>
+
+
+</article>
+
+      </main>
+
+      <footer class="footer">
+        <small>
+          © <time datetime="2018-09-12T19:20:00-04:00">2018</time>. The text of this work is
+          licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative
+              Commons Attribution-NonCommercial 4.0 International License</a>.
+          Additionally, code examples are provided as <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>.
+        </small>
+      </footer>
+    </div>
+    <script src="./Making Games with p5.play (Creative Coding)_files/jquery-1.11.3.min.js"></script>
+    <script src="./Making Games with p5.play (Creative Coding)_files/sketchui.js"></script>
+  
+
+</body></html>

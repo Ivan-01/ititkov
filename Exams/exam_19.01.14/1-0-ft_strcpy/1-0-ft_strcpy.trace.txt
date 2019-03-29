@@ -1,0 +1,58 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z1r7p19.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Jan 15 09:34:48 PST 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190115/ititkov
+
+= Git history ==================================================================
+$> git -C /var/folders/wh/qkdg4ds94nbc1sf7h_d6_c_80000gp/T/tmpXvdsCm/user log --pretty='%H - %an, %ad : %s'
+e4d498894e26c5e395584cefc1d49f26a92899eb - Exam 42, Tue Jan 15 09:33:55 2019 -0800 : ft_strcpy
+372c1ded3730354d94393018ae1e4c4e5ef7c950 - Exam 42, Tue Jan 15 09:12:16 2019 -0800 : ft_print_numbers
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/wh/qkdg4ds94nbc1sf7h_d6_c_80000gp/T/tmpXvdsCm/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  468 Jan 15 09:34 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Jan 15 09:34 ft_print_numbers
+drwxr-xr-x  3 deepthought  deepthought  102 Jan 15 09:34 ft_strcpy
+
+/var/folders/wh/qkdg4ds94nbc1sf7h_d6_c_80000gp/T/tmpXvdsCm/user/ft_print_numbers:
+total 8
+-rw-r--r--  1 deepthought  deepthought  975 Jan 15 09:34 ft_print_numbers.c
+
+/var/folders/wh/qkdg4ds94nbc1sf7h_d6_c_80000gp/T/tmpXvdsCm/user/ft_strcpy:
+total 8
+-rw-r--r--  1 deepthought  deepthought  988 Jan 15 09:34 ft_strcpy.c
+ 
+= ft_strcpy ====================================================================
+$> gcc -Wextra -Wall -Werror main.c ft_strcpy.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./cm7t3fhlamwkd10omx7n3ani ""
+$> diff -U 3 user_output_test1 test1.output | cat -e
+--- user_output_test1	2019-01-15 09:34:50.000000000 -0800$
++++ test1.output	2019-01-15 09:34:50.000000000 -0800$
+@@ -1 +1 @@$
+-Incorrect$
++Correct$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================

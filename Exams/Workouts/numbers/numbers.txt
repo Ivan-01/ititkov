@@ -1,0 +1,15 @@
+
+
+
+Задачи на числа
+
+
+02		is_power_of_2
+
+03		ft_rrange
+
+03		pgcd
+
+04		fprime
+
+

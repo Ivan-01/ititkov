@@ -1,0 +1,120 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r7p14.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Feb 12 12:02:59 PST 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190212/ititkov
+
+= Git history ==================================================================
+$> git -C /var/folders/mw/klpsm5t91zddzcfd09_ksw6w0000gp/T/tmp99gBf8/user log --pretty='%H - %an, %ad : %s'
+3c8b5cac5ba9e382b35de20e3abd1cc16a25117d - Exam 42, Tue Feb 12 12:02:47 2019 -0800 : ft_itoa
+56cc308d302123c3994eab0506585817ad3d42a2 - Exam 42, Tue Feb 12 11:27:33 2019 -0800 : sort_list
+bfdb5686aa6b08ee251911d036e217deb648154f - Exam 42, Tue Feb 12 11:22:11 2019 -0800 : check_mate
+8a78c38232abf1b059f0009b85b52c28c7f84ddd - Exam 42, Tue Feb 12 11:19:05 2019 -0800 : ft_atoi_base
+2f0436fe6880eb5702b7c405ea0029fc07a26d05 - Exam 42, Tue Feb 12 10:24:09 2019 -0800 : ft_rrange
+b344d1afd631346b5f2156d7f28775189568050b - Exam 42, Tue Feb 12 09:54:59 2019 -0800 : swap_bits
+caf510317ae1ac450f797f6936a3eb7a84628a67 - Exam 42, Tue Feb 12 09:39:55 2019 -0800 : ft_strlen
+90692381b617babc0344898dc048609e8d849b3a - Exam 42, Tue Feb 12 09:22:50 2019 -0800 : aff_last_param
+c845a1cf4c7b529d3e6497c39df64988474a6a6f - Exam 42, Tue Feb 12 09:16:00 2019 -0800 : aff_last_param
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/mw/klpsm5t91zddzcfd09_ksw6w0000gp/T/tmp99gBf8/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  2183 Feb 12 12:03 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:03 aff_last_param
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:03 check_mate
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:03 ft_atoi_base
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:03 ft_itoa
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:03 ft_rrange
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:03 ft_strlen
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:03 maff_alpha
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:03 sort_list
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:03 swap_bits
+
+/var/folders/mw/klpsm5t91zddzcfd09_ksw6w0000gp/T/tmp99gBf8/user/aff_last_param:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1127 Feb 12 12:03 aff_last_param.c
+
+/var/folders/mw/klpsm5t91zddzcfd09_ksw6w0000gp/T/tmp99gBf8/user/check_mate:
+total 8
+-rw-r--r--  1 deepthought  deepthought  893 Feb 12 12:03 check_mate.c
+
+/var/folders/mw/klpsm5t91zddzcfd09_ksw6w0000gp/T/tmp99gBf8/user/ft_atoi_base:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1544 Feb 12 12:03 ft_atoi_base.c
+
+/var/folders/mw/klpsm5t91zddzcfd09_ksw6w0000gp/T/tmp99gBf8/user/ft_itoa:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1460 Feb 12 12:03 ft_itoa.c
+
+/var/folders/mw/klpsm5t91zddzcfd09_ksw6w0000gp/T/tmp99gBf8/user/ft_rrange:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1257 Feb 12 12:03 ft_rrange.c
+
+/var/folders/mw/klpsm5t91zddzcfd09_ksw6w0000gp/T/tmp99gBf8/user/ft_strlen:
+total 8
+-rw-r--r--  1 deepthought  deepthought  978 Feb 12 12:03 ft_strlen.c
+
+/var/folders/mw/klpsm5t91zddzcfd09_ksw6w0000gp/T/tmp99gBf8/user/maff_alpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  994 Feb 12 12:03 maff_alpha.c
+
+/var/folders/mw/klpsm5t91zddzcfd09_ksw6w0000gp/T/tmp99gBf8/user/sort_list:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1051 Feb 12 12:03 sort_list.c
+
+/var/folders/mw/klpsm5t91zddzcfd09_ksw6w0000gp/T/tmp99gBf8/user/swap_bits:
+total 8
+-rw-r--r--  1 deepthought  deepthought  982 Feb 12 12:03 swap_bits.c
+ 
+= ft_itoa ======================================================================
+$> gcc -Wextra -Wall -Werror main.c ft_itoa.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./ubbvu106hvciu8yjyawfhnmz 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./h663hdgeuu8sdyzn77qwzhlv "1" "2" "3" "4" "5" "6"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./7zuvu2x2slwk1d71qk8m0to4 0
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./iuo4qhpnhxpxzn44q4v0b2oi 2147483647
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./obzws91acgyxxjw1yz8u51lw -2147483648
+$> diff -U 3 user_output_test5 test5.output | cat -e
+--- user_output_test5	2019-02-12 12:03:01.000000000 -0800$
++++ test5.output	2019-02-12 12:03:01.000000000 -0800$
+@@ -1 +1 @@$
+--0$
++-2147483648$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================

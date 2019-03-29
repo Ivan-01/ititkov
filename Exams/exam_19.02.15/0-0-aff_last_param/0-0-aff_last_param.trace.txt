@@ -1,0 +1,87 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z4r13p4.42.us.org
+Darwin 17.5.0 x86_64
+$> date
+Fri Feb 15 09:13:40 PST 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190215/ititkov
+
+= Git history ==================================================================
+$> git -C /var/folders/t4/r4yh0mk56rng8kgpcm2lb1h00000gp/T/tmpivTDek/user log --pretty='%H - %an, %ad : %s'
+8d9795e6f52dbe8f3fe59894c4d88b84a95e1d50 - Exam 42, Fri Feb 15 09:13:15 2019 -0800 : aff_last_param
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/t4/r4yh0mk56rng8kgpcm2lb1h00000gp/T/tmpivTDek/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  247 Feb 15 09:13 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Feb 15 09:13 aff_last_param
+
+/var/folders/t4/r4yh0mk56rng8kgpcm2lb1h00000gp/T/tmpivTDek/user/aff_last_param:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1105 Feb 15 09:13 aff_last_param.c
+ 
+= aff_last_param ===============================================================
+$> gcc -Wextra -Wall -Werror aff_last_param.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./escrob3fhgrprml3r9p8hgb3 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./perqm0xj381tpvju6huczl45 "3GWS"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./x5lepr276ukkatlzdigqno3b "w9iRk2u60XaCr5K"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./z3ik6y1w0704wd5r1elv02b8 "NdXrJ XnaByYI ncAPQbMUfie meCY3pHzjxW8 M02nXKfJaTEb rZYfsJnO wafX Q2v 3jxH4Uv mwNYM9DLTp2 DGLB3gpAo1M Sg5 Y3owT2 5VmA9xYJtTH7 p"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./7m5vn8sufgml36vktmg900wm "lEDnChAgaPN VE 438RcqsZg MVde4 3hj bFp4 4cHsi0k6TGqX"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./13fphdlwqf8gzup49yundn56 "R" "J6FEGISDm4b9" "VCHDrXzckmFl" "Dr4pWyqAJY" "wfFKxIjYoa" "GJp" "C0" "eO7" "4" "Ow6ykE" "BsmLwRd" "rKWGTNzJ" "KhJ2OTXidYU" "GqlWbi"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./w852l4sn6baomqli5jzg4jgc "y2ojxvOi" "u3" "PgU39RaFCL" "Zu6I4we"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./9qsffz010nyrn7m7e9plk8qi "h6e30w1NIxy cBswhz52" "b9 aPm5Loc1C R0CqAVM ELhabQFIX" "V 10" "hN80MEl95R XGUFJrsi z70qLiUeMf 5EzDkG2" "yweRm0 SV2HM" "msQVn1XPgzWc 9FHwhgtEi4 0XLgQMJ" "5SuRd4MI90tx 1czYJtIF" "tgcs3akImd8h bCs7qm fS kN5miZtRSq" "X4gtSu5 q1y4UMtHmlzC I5iV0TP" "FPxkqYWmSD se9UCvrYkM vXorLuKpcq Jaq5" "m lVHOQe3cwq i 08GKoP2R" "0vks39ow7" "u" "ZemHIkMuaEtw ael5Xv" "v0QrOKdfx9 zX23F"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./0uplg8mn61n2i8qtvmbvi31g "5tE" "xQCqVDKRHBh BpN78 HQO9FPYmLEay O4MnjLik" "9Zl4Xgu" "P mtWJX1a6 U36OIenzPN agNf8RByPUAJ" "7gVeB z" "b hlJvx8QdeCpt" "QlZVyO d87cstWYVm" "gStV 4LhZuAENmK8 GZPRCi"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

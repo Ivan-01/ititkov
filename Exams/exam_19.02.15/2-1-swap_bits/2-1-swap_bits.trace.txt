@@ -1,0 +1,65 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z1r7p20.42.us.org
+Darwin 17.5.0 x86_64
+$> date
+Fri Feb 15 10:21:33 PST 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190215/ititkov
+
+= Git history ==================================================================
+$> git -C /var/folders/ng/m3684ryn3s9d1vwfnfh8jn240000gp/T/tmpQPnegJ/user log --pretty='%H - %an, %ad : %s'
+3dae59e84a3c2fa0d4c73429cb62db4d77df7752 - Exam 42, Fri Feb 15 10:21:21 2019 -0800 : swap_bits
+e987ad01276c3144d27b6b04d92f640db2e58141 - Exam 42, Fri Feb 15 10:05:23 2019 -0800 : do_op
+73d23e0990a9bfbf4b4a8d94426da96b3dd12998 - Exam 42, Fri Feb 15 09:25:01 2019 -0800 : repeat_alpha
+8d9795e6f52dbe8f3fe59894c4d88b84a95e1d50 - Exam 42, Fri Feb 15 09:13:15 2019 -0800 : aff_last_param
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/ng/m3684ryn3s9d1vwfnfh8jn240000gp/T/tmpQPnegJ/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  965 Feb 15 10:21 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Feb 15 10:21 aff_last_param
+drwxr-xr-x  3 deepthought  deepthought  102 Feb 15 10:21 do_op
+drwxr-xr-x  3 deepthought  deepthought  102 Feb 15 10:21 repeat_alpha
+drwxr-xr-x  3 deepthought  deepthought  102 Feb 15 10:21 swap_bits
+
+/var/folders/ng/m3684ryn3s9d1vwfnfh8jn240000gp/T/tmpQPnegJ/user/aff_last_param:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1105 Feb 15 10:21 aff_last_param.c
+
+/var/folders/ng/m3684ryn3s9d1vwfnfh8jn240000gp/T/tmpQPnegJ/user/do_op:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1402 Feb 15 10:21 do_op.c
+
+/var/folders/ng/m3684ryn3s9d1vwfnfh8jn240000gp/T/tmpQPnegJ/user/repeat_alpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1240 Feb 15 10:21 repeat_alpha.c
+
+/var/folders/ng/m3684ryn3s9d1vwfnfh8jn240000gp/T/tmpQPnegJ/user/swap_bits:
+total 8
+-rw-r--r--  1 deepthought  deepthought  981 Feb 15 10:21 swap_bits.c
+ 
+= swap_bits ====================================================================
+$> gcc -Wextra -Wall -Werror main.c swap_bits.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./tg9qz3qqgho1omda8sr547wz
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

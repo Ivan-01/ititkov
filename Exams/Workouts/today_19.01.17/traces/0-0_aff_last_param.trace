@@ -1,0 +1,87 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r6p21.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Thu Jan 17 14:28:16 PST 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/practice-exam_20190117/ititkov2
+
+= Git history ==================================================================
+$> git -C /var/folders/dp/93vk2tn55b5gy00mhl509w6m0000gp/T/tmplTq1FG/user log --pretty='%H - %an, %ad : %s'
+2f09001a7960450168ec1dca2d1f485177b37b80 - ititkov, Thu Jan 17 14:27:52 2019 -0800 : aff_last_param
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/dp/93vk2tn55b5gy00mhl509w6m0000gp/T/tmplTq1FG/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  247 Jan 17 14:28 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Jan 17 14:28 aff_last_param
+
+/var/folders/dp/93vk2tn55b5gy00mhl509w6m0000gp/T/tmplTq1FG/user/aff_last_param:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1112 Jan 17 14:28 aff_last_param.c
+ 
+= aff_last_param ===============================================================
+$> gcc -Wextra -Wall -Werror aff_last_param.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./t5dcr98so5n8hp50nt6odrrw 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./z8zei5iwacj921i3fmi310yr "NBrFOQ6bt8fsdgG"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./fjvyctghrwg4kpk31oq6lhb4 "khH"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./mxcfsk7pbdcb9qer694k6oa0 "hVazwv rB7DM 74xsibM8vhYU u2X7ER0K OzEm24 xJQcILaA1p B t1D0gRcT i 3sFXOJPr 2pOHYcgyMbvT oRY4"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./4ozfoh9m3fele7x5ytgvog8j "9k mKH KEuHTqRBL eNK"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./6aiewcdq4vu4qg13jhprbsx5 "oOe03fCnE" "Er48pjv" "mWwKSQG" "VhjZxYGEnI"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./0bznger9xrnadexqcmhziwh5 "MNH13n08Aa" "PFzrV3cq" "XM7mi" "hXoFw" "81JiAyr6F" "6bjq1" "WjCz" "b8" "MEfWik" "5WlbyfmJtTH"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./u2vrnmezw2u20g32tokwmtcp "NDkUbf uLHK SNbn7" "Qw2g" "KEfarojdQ 8M EvGhJ1BF8I2V" "7ascQARNn6hC xNlOfbJ iJN4zcZCwy8" "qsBWv7Zk 3tdM" "aruzF31Psy uEDS1H8Woszi" "YrhQF3v Rd9bMy8xjuFk 7VJ b" "Pu" "pR7q JV1w6HkONI0 q7 Ay0xI8ljqcCG" "wlD KCShNbu63A 5c" "4KQu03qhzTjv 3ev8gk O4"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./ujmg50dxtx7zgr7671640cfo "K9ySR" "iX8AYJb0 X1hIgka k1XBn23 86hBAGMOiEbK" "G2hzC5vd NzVqoCgc9bF 4" "udn mKq VM av6W3" "3J6h AKEjkq8fU 62ZGed 7C" "6GhMxo0SH 5BJRN A NMOcnlBHP" "BJV2yPzjRcF" "7ARnWZeMq y5 Bvn0f8HXgoAk SM2vJ68AETZN" "uoVagwSZJ HdpKluzD1IG"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

@@ -1,0 +1,122 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r3p22.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Feb 12 11:27:49 PST 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190212/ititkov
+
+= Git history ==================================================================
+$> git -C /var/folders/wj/2mbppcl95gv5t7cssvgwrwp00000gp/T/tmp5CTQgp/user log --pretty='%H - %an, %ad : %s'
+56cc308d302123c3994eab0506585817ad3d42a2 - Exam 42, Tue Feb 12 11:27:33 2019 -0800 : sort_list
+bfdb5686aa6b08ee251911d036e217deb648154f - Exam 42, Tue Feb 12 11:22:11 2019 -0800 : check_mate
+8a78c38232abf1b059f0009b85b52c28c7f84ddd - Exam 42, Tue Feb 12 11:19:05 2019 -0800 : ft_atoi_base
+2f0436fe6880eb5702b7c405ea0029fc07a26d05 - Exam 42, Tue Feb 12 10:24:09 2019 -0800 : ft_rrange
+b344d1afd631346b5f2156d7f28775189568050b - Exam 42, Tue Feb 12 09:54:59 2019 -0800 : swap_bits
+caf510317ae1ac450f797f6936a3eb7a84628a67 - Exam 42, Tue Feb 12 09:39:55 2019 -0800 : ft_strlen
+90692381b617babc0344898dc048609e8d849b3a - Exam 42, Tue Feb 12 09:22:50 2019 -0800 : aff_last_param
+c845a1cf4c7b529d3e6497c39df64988474a6a6f - Exam 42, Tue Feb 12 09:16:00 2019 -0800 : aff_last_param
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/wj/2mbppcl95gv5t7cssvgwrwp00000gp/T/tmp5CTQgp/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1929 Feb 12 11:27 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 11:27 aff_last_param
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 11:27 check_mate
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 11:27 ft_atoi_base
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 11:27 ft_rrange
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 11:27 ft_strlen
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 11:27 maff_alpha
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 11:27 sort_list
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 11:27 swap_bits
+
+/var/folders/wj/2mbppcl95gv5t7cssvgwrwp00000gp/T/tmp5CTQgp/user/aff_last_param:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1127 Feb 12 11:27 aff_last_param.c
+
+/var/folders/wj/2mbppcl95gv5t7cssvgwrwp00000gp/T/tmp5CTQgp/user/check_mate:
+total 8
+-rw-r--r--  1 deepthought  deepthought  893 Feb 12 11:27 check_mate.c
+
+/var/folders/wj/2mbppcl95gv5t7cssvgwrwp00000gp/T/tmp5CTQgp/user/ft_atoi_base:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1544 Feb 12 11:27 ft_atoi_base.c
+
+/var/folders/wj/2mbppcl95gv5t7cssvgwrwp00000gp/T/tmp5CTQgp/user/ft_rrange:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1257 Feb 12 11:27 ft_rrange.c
+
+/var/folders/wj/2mbppcl95gv5t7cssvgwrwp00000gp/T/tmp5CTQgp/user/ft_strlen:
+total 8
+-rw-r--r--  1 deepthought  deepthought  978 Feb 12 11:27 ft_strlen.c
+
+/var/folders/wj/2mbppcl95gv5t7cssvgwrwp00000gp/T/tmp5CTQgp/user/maff_alpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  994 Feb 12 11:27 maff_alpha.c
+
+/var/folders/wj/2mbppcl95gv5t7cssvgwrwp00000gp/T/tmp5CTQgp/user/sort_list:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1051 Feb 12 11:27 sort_list.c
+
+/var/folders/wj/2mbppcl95gv5t7cssvgwrwp00000gp/T/tmp5CTQgp/user/swap_bits:
+total 8
+-rw-r--r--  1 deepthought  deepthought  982 Feb 12 11:27 swap_bits.c
+ 
+= sort_list ====================================================================
+$> gcc -Wextra -Wall -Werror sort_list.c main.c -o user_exe 
+sort_list.c:13:1: error: unknown type name 't_list'
+t_list          *sort_list(t_list *lst, int (*cmp)(int, int))
+^
+sort_list.c:13:20: error: unknown type name 't_list'
+t_list          *sort_list(t_list *lst, int (*cmp)(int, int))
+                           ^
+sort_list.c:15:2: error: use of undeclared identifier 't_list'
+        t_list          tmp;
+        ^
+sort_list.c:16:2: error: use of undeclared identifier 't_list'
+        t_list          i;
+        ^
+sort_list.c:18:2: error: use of undeclared identifier 'tmp'; did you mean 'cmp'?
+        tmp = NULL;
+        ^~~
+        cmp
+sort_list.c:13:39: note: 'cmp' declared here
+t_list          *sort_list(t_list *lst, int (*cmp)(int, int))
+                                              ^
+sort_list.c:18:8: error: use of undeclared identifier 'NULL'
+        tmp = NULL;
+              ^
+sort_list.c:19:2: error: use of undeclared identifier 'i'
+        i = NULL;
+        ^
+sort_list.c:19:6: error: use of undeclared identifier 'NULL'
+        i = NULL;
+            ^
+sort_list.c:23:3: error: implicit declaration of function 'retrun' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                retrun(0);
+                ^
+sort_list.c:26:1: error: expected '}'
+^
+sort_list.c:14:1: note: to match this '{'
+{
+^
+10 errors generated.
+
+Could not compile 'user_exe'
+Grade: 0
+
+= Final grade: 0 ===============================================================

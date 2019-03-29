@@ -1,0 +1,66 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r2p3.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Dec 18 12:16:03 PST 2018
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2018/c-exam-alone-in-the-dark-beginner/exam_20181218/ititkov
+
+= Git history ==================================================================
+$> git -C /var/folders/p0/yjtb065x497_j3dk9557l9th0000gp/T/tmpUpfsRD/user log --pretty='%H - %an, %ad : %s'
+35577079926dc6f07181eb7efc62aa9a76ef8771 - Exam 42, Tue Dec 18 12:11:12 2018 -0800 : lsqqq
+1068a57aecdfd28055b3ab68a0d5ebbcfe266d2d - Exam 42, Tue Dec 18 09:57:01 2018 -0800 : alpha_mirror
+e2bf69b8bf010eb1593beede6fc31252438d5168 - Exam 42, Tue Dec 18 09:23:56 2018 -0800 : ft_putstr
+6969d5d51460ac413e7b189a28ba843bb414398f - Exam 42, Tue Dec 18 09:11:39 2018 -0800 : maff_revalpha
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/p0/yjtb065x497_j3dk9557l9th0000gp/T/tmpUpfsRD/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1019 Dec 18 12:16 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Dec 18 12:16 alpha_mirror
+drwxr-xr-x  3 deepthought  deepthought   102 Dec 18 12:16 ft_putstr
+drwxr-xr-x  3 deepthought  deepthought   102 Dec 18 12:16 ft_range
+drwxr-xr-x  3 deepthought  deepthought   102 Dec 18 12:16 maff_revalpha
+
+/var/folders/p0/yjtb065x497_j3dk9557l9th0000gp/T/tmpUpfsRD/user/alpha_mirror:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1435 Dec 18 12:16 alpha_mirror.c
+
+/var/folders/p0/yjtb065x497_j3dk9557l9th0000gp/T/tmpUpfsRD/user/ft_putstr:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1014 Dec 18 12:16 ft_putstr.c
+
+/var/folders/p0/yjtb065x497_j3dk9557l9th0000gp/T/tmpUpfsRD/user/ft_range:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1759 Dec 18 12:16 ft_range.c
+
+/var/folders/p0/yjtb065x497_j3dk9557l9th0000gp/T/tmpUpfsRD/user/maff_revalpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  993 Dec 18 12:16 maff_revalpha.c
+ 
+= ft_range =====================================================================
+$> gcc -Wextra -Wall -Werror main.c ft_range.c -o user_exe 
+duplicate symbol _main in:
+    /var/folders/p0/yjtb065x497_j3dk9557l9th0000gp/T/main-494cb4.o
+    /var/folders/p0/yjtb065x497_j3dk9557l9th0000gp/T/ft_range-ae608e.o
+ld: 1 duplicate symbol for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Could not compile 'user_exe'
+Grade: 0
+
+= Final grade: 0 ===============================================================

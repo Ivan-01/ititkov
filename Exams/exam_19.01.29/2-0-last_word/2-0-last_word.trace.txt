@@ -1,0 +1,79 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z1r4p45.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Jan 29 10:26:48 PST 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190129/ititkov
+
+= Git history ==================================================================
+$> git -C /var/folders/hm/cwb2qpcn4rx_6__86j678wj40000gp/T/tmpaTZWQz/user log --pretty='%H - %an, %ad : %s'
+46d8fd63455dea6e61d93061f99ed47aacfa1d6e - Exam 42, Tue Jan 29 10:26:36 2019 -0800 : last_word
+355c85532a55ef71f52bcfece74cfcbe670c8b30 - Exam 42, Tue Jan 29 09:20:36 2019 -0800 : rot_13
+6d7e4e6a88b346f1f91c10e283c7c25e0ed0e01e - Exam 42, Tue Jan 29 09:05:59 2019 -0800 : qqq
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/hm/cwb2qpcn4rx_6__86j678wj40000gp/T/tmpaTZWQz/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  714 Jan 29 10:26 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Jan 29 10:26 ft_countdown
+drwxr-xr-x  3 deepthought  deepthought  102 Jan 29 10:26 last_word
+drwxr-xr-x  3 deepthought  deepthought  102 Jan 29 10:26 rot_13
+
+/var/folders/hm/cwb2qpcn4rx_6__86j678wj40000gp/T/tmpaTZWQz/user/ft_countdown:
+total 8
+-rw-r--r--  1 deepthought  deepthought  977 Jan 29 10:26 ft_countdown.c
+
+/var/folders/hm/cwb2qpcn4rx_6__86j678wj40000gp/T/tmpaTZWQz/user/last_word:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1656 Jan 29 10:26 last_word.c
+
+/var/folders/hm/cwb2qpcn4rx_6__86j678wj40000gp/T/tmpaTZWQz/user/rot_13:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1294 Jan 29 10:26 rot_13.c
+ 
+= last_word ====================================================================
+$> gcc -Wextra -Wall -Werror last_word.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./646z4vvxm7nobsraf9jthsox 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./1dp3a0ykytygy2w8n9clop90 
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./6uj96r5zllv61o6gimhpa4wt "salut" "a" "tous" "tout" "le" "monde"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./6ymk3v9chjq2ri807jocumjn "7fz"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+--- user_output_test4	2019-01-29 10:26:51.000000000 -0800$
++++ test4.output	2019-01-29 10:26:51.000000000 -0800$
+@@ -1 +1 @@$
+-$
++7fz$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================

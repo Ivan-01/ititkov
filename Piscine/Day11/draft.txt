@@ -1,0 +1,22 @@
+Exercice 08 ft_list_reverse
+
+Что является результатом, reverse указателей или reverse данных в узлах?
+Судя по фразе which reverses the order of a list's elements
+речь идёт о reverse узлов, т.е. указателей.
+
+Что значит фраза "You may only use pointers related stuff."?
+Значит ли это, что запрещено создавать tmp указатель для swap?
+
+ while ((*begin_list)->next)         // Не пониманю, что здесь происходит.
+      {
+          next = (*begin_list)->next->next;
+          (*begin_list)->next->next = (*begin_list);
+          (*begin_list)->next = next;
+          (*begin_list) = (*begin_list)->next;
+      }
+
+Присваиваем next значение указателя на элемент через один от начального
+Присваиваем указателю на элемент через один от первого значение указателя на первый
+...
+Не понимаю
+

@@ -1,0 +1,112 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r7p37.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Mon Feb 18 12:51:32 PST 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190218/ititkov
+
+= Git history ==================================================================
+$> git -C /var/folders/63/pscnm73x7x9gq85r8tnnbc_80000gp/T/tmpFdKDtk/user log --pretty='%H - %an, %ad : %s'
+533cb368b178d0efcb7c3dec75d42e1f2b6118d2 - Exam 42, Mon Feb 18 12:50:20 2019 -0800 : ft_itoa_base
+cc20b0e001a1ca5b2a2d6088dc6e059ffc879898 - Exam 42, Mon Feb 18 11:09:17 2019 -0800 : sort_list
+96ec7ea9f499fa7ec0af0be429c7909b8830187c - Exam 42, Mon Feb 18 09:56:18 2019 -0800 : pgcd
+289e688d9316c5763a3f6f02a6cf9ababecee408 - Exam 42, Mon Feb 18 09:24:40 2019 -0800 : alpha_mirror
+0749d00565089291af348c77a853d52a19966c5e - Exam 42, Mon Feb 18 09:13:16 2019 -0800 : ulstr
+3b2ec8f9f08e5117f3342eb593bb471c87402769 - Exam 42, Mon Feb 18 09:04:32 2019 -0800 : ft_countdown
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/63/pscnm73x7x9gq85r8tnnbc_80000gp/T/tmpFdKDtk/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1470 Feb 18 12:51 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 18 12:51 alpha_mirror
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 18 12:51 ft_countdown
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 18 12:51 ft_itoa_base
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 18 12:51 pgcd
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 18 12:51 sort_list
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 18 12:51 ulstr
+
+/var/folders/63/pscnm73x7x9gq85r8tnnbc_80000gp/T/tmpFdKDtk/user/alpha_mirror:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1366 Feb 18 12:51 alpha_mirror.c
+
+/var/folders/63/pscnm73x7x9gq85r8tnnbc_80000gp/T/tmpFdKDtk/user/ft_countdown:
+total 8
+-rw-r--r--  1 deepthought  deepthought  962 Feb 18 12:51 ft_countdown.c
+
+/var/folders/63/pscnm73x7x9gq85r8tnnbc_80000gp/T/tmpFdKDtk/user/ft_itoa_base:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1965 Feb 18 12:51 ft_itoa_base.c
+
+/var/folders/63/pscnm73x7x9gq85r8tnnbc_80000gp/T/tmpFdKDtk/user/pgcd:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1470 Feb 18 12:51 pgcd.c
+
+/var/folders/63/pscnm73x7x9gq85r8tnnbc_80000gp/T/tmpFdKDtk/user/sort_list:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1229 Feb 18 12:51 sort_list.c
+
+/var/folders/63/pscnm73x7x9gq85r8tnnbc_80000gp/T/tmpFdKDtk/user/ulstr:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1239 Feb 18 12:51 ulstr.c
+ 
+= ft_itoa_base =================================================================
+$> gcc -Wextra -Wall -Werror ft_itoa_base.c main.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./t591koa642y1cmekc1xy6ibm 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./0d44097ravxcpcsy7juqvtfd "21" "2313" "12"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./4bsn86ejinhgmp1kc690hhh8 "2147483647" "10"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./w97ewwq9yhp9u3bg5jo1xdak "-2147483648" "10"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./9lqp51oqh2clslsxsyeii8sa "0" "2"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./f570u9bptkhbjylmfgwrwecs "--223" "10"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./5ntarapg4c0u5khvuyvu60b8 "510794646" "12"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+--- user_output_test7	2019-02-18 12:51:36.000000000 -0800$
++++ test7.output	2019-02-18 12:51:36.000000000 -0800$
+@@ -1 +1 @@$
+-1230A2A07$
++123092906$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================

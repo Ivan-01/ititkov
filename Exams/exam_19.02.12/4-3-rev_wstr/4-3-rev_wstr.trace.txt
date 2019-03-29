@@ -1,0 +1,131 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r1p20.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Feb 12 12:45:50 PST 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190212/ititkov
+
+= Git history ==================================================================
+$> git -C /var/folders/58/w4mvh94d2csc9lbx5t7w4mlr0000gp/T/tmpUz7cff/user log --pretty='%H - %an, %ad : %s'
+cb89a799532538a4b7f036d6669256000173371b - Exam 42, Tue Feb 12 12:45:41 2019 -0800 : rev_wstr
+3c8b5cac5ba9e382b35de20e3abd1cc16a25117d - Exam 42, Tue Feb 12 12:02:47 2019 -0800 : ft_itoa
+56cc308d302123c3994eab0506585817ad3d42a2 - Exam 42, Tue Feb 12 11:27:33 2019 -0800 : sort_list
+bfdb5686aa6b08ee251911d036e217deb648154f - Exam 42, Tue Feb 12 11:22:11 2019 -0800 : check_mate
+8a78c38232abf1b059f0009b85b52c28c7f84ddd - Exam 42, Tue Feb 12 11:19:05 2019 -0800 : ft_atoi_base
+2f0436fe6880eb5702b7c405ea0029fc07a26d05 - Exam 42, Tue Feb 12 10:24:09 2019 -0800 : ft_rrange
+b344d1afd631346b5f2156d7f28775189568050b - Exam 42, Tue Feb 12 09:54:59 2019 -0800 : swap_bits
+caf510317ae1ac450f797f6936a3eb7a84628a67 - Exam 42, Tue Feb 12 09:39:55 2019 -0800 : ft_strlen
+90692381b617babc0344898dc048609e8d849b3a - Exam 42, Tue Feb 12 09:22:50 2019 -0800 : aff_last_param
+c845a1cf4c7b529d3e6497c39df64988474a6a6f - Exam 42, Tue Feb 12 09:16:00 2019 -0800 : aff_last_param
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/58/w4mvh94d2csc9lbx5t7w4mlr0000gp/T/tmpUz7cff/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  2438 Feb 12 12:45 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:45 aff_last_param
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:45 check_mate
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:45 ft_atoi_base
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:45 ft_itoa
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:45 ft_rrange
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:45 ft_strlen
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:45 maff_alpha
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:45 rev_wstr
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:45 sort_list
+drwxr-xr-x  3 deepthought  deepthought   102 Feb 12 12:45 swap_bits
+
+/var/folders/58/w4mvh94d2csc9lbx5t7w4mlr0000gp/T/tmpUz7cff/user/aff_last_param:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1127 Feb 12 12:45 aff_last_param.c
+
+/var/folders/58/w4mvh94d2csc9lbx5t7w4mlr0000gp/T/tmpUz7cff/user/check_mate:
+total 8
+-rw-r--r--  1 deepthought  deepthought  893 Feb 12 12:45 check_mate.c
+
+/var/folders/58/w4mvh94d2csc9lbx5t7w4mlr0000gp/T/tmpUz7cff/user/ft_atoi_base:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1544 Feb 12 12:45 ft_atoi_base.c
+
+/var/folders/58/w4mvh94d2csc9lbx5t7w4mlr0000gp/T/tmpUz7cff/user/ft_itoa:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1460 Feb 12 12:45 ft_itoa.c
+
+/var/folders/58/w4mvh94d2csc9lbx5t7w4mlr0000gp/T/tmpUz7cff/user/ft_rrange:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1257 Feb 12 12:45 ft_rrange.c
+
+/var/folders/58/w4mvh94d2csc9lbx5t7w4mlr0000gp/T/tmpUz7cff/user/ft_strlen:
+total 8
+-rw-r--r--  1 deepthought  deepthought  978 Feb 12 12:45 ft_strlen.c
+
+/var/folders/58/w4mvh94d2csc9lbx5t7w4mlr0000gp/T/tmpUz7cff/user/maff_alpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  994 Feb 12 12:45 maff_alpha.c
+
+/var/folders/58/w4mvh94d2csc9lbx5t7w4mlr0000gp/T/tmpUz7cff/user/rev_wstr:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1791 Feb 12 12:45 rev_wstr.c
+
+/var/folders/58/w4mvh94d2csc9lbx5t7w4mlr0000gp/T/tmpUz7cff/user/sort_list:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1051 Feb 12 12:45 sort_list.c
+
+/var/folders/58/w4mvh94d2csc9lbx5t7w4mlr0000gp/T/tmpUz7cff/user/swap_bits:
+total 8
+-rw-r--r--  1 deepthought  deepthought  982 Feb 12 12:45 swap_bits.c
+ 
+= rev_wstr =====================================================================
+$> gcc -Wextra -Wall -Werror rev_wstr.c -o user_exe 
+rev_wstr.c:15:2: error: implicit declaration of function 'write' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        write(1, &c, 1);
+        ^
+rev_wstr.c:20:2: error: use of undeclared identifier 'i'
+        i = 0;
+        ^
+rev_wstr.c:22:13: error: use of undeclared identifier 'i'
+        while (str[i])
+                   ^
+rev_wstr.c:23:3: error: use of undeclared identifier 'i'
+                i++;
+                ^
+rev_wstr.c:24:10: error: use of undeclared identifier 'i'
+        return (i);
+                ^
+rev_wstr.c:34:20: error: use of undeclared identifier 'star'; did you mean 'start'?
+                        ft_putchar (str[star]);
+                                        ^~~~
+                                        start
+rev_wstr.c:27:35: note: 'start' declared here
+void            ft_printword(char *str, int start)
+                                            ^
+rev_wstr.c:38:16: error: use of undeclared identifier 'srt'
+                        ft_putchar (srt[start]);
+                                    ^
+rev_wstr.c:42:1: error: function definition is not allowed here
+{
+^
+rev_wstr.c:80:1: error: expected '}'
+^
+rev_wstr.c:28:1: note: to match this '{'
+{
+^
+9 errors generated.
+
+Could not compile 'user_exe'
+Grade: 0
+
+= Final grade: 0 ===============================================================

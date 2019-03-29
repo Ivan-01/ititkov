@@ -1,0 +1,109 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r6p6.42.us.org
+Darwin 17.5.0 x86_64
+$> date
+Tue Feb  5 11:23:23 PST 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190205/ititkov
+
+= Git history ==================================================================
+$> git -C /var/folders/7w/w77kjx197zs4yvlz79rszr2m0000gp/T/tmpuPPWoe/user log --pretty='%H - %an, %ad : %s'
+c86c08baca561df682af94b65ec7c12e57c93378 - Exam 42, Tue Feb 5 11:23:08 2019 -0800 : sort_list
+5b9b2e43ae0a9bcf749c7210c9aa108fe05c7a63 - Exam 42, Tue Feb 5 11:10:43 2019 -0800 : flood_fill
+4b0d91380f36e1f5e10421bb538d223d1f56d1bf - Exam 42, Tue Feb 5 10:57:03 2019 -0800 : check_mate
+b6a4f599a7a714a375b362647b21052fd136fcd7 - Exam 42, Tue Feb 5 10:38:00 2019 -0800 : expand_str
+2f48c61d402f46e45aab3edcbb899f2eef9193ed - Exam 42, Tue Feb 5 10:06:27 2019 -0800 : union
+994153e696139be6d1d1b6d6980c70256e89f939 - Exam 42, Tue Feb 5 09:34:15 2019 -0800 : repeat_alpha
+4c1d65954ce5474ff41fe296883fdc0851f1e322 - Exam 42, Tue Feb 5 09:16:01 2019 -0800 : aff_a
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/7w/w77kjx197zs4yvlz79rszr2m0000gp/T/tmpuPPWoe/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1775 Feb  5 11:23 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Feb  5 11:23 aff_a
+drwxr-xr-x  4 deepthought  deepthought   136 Feb  5 11:23 check_mate
+drwxr-xr-x  3 deepthought  deepthought   102 Feb  5 11:23 expand_str
+drwxr-xr-x  4 deepthought  deepthought   136 Feb  5 11:23 flood_fill
+drwxr-xr-x  3 deepthought  deepthought   102 Feb  5 11:23 repeat_alpha
+drwxr-xr-x  3 deepthought  deepthought   102 Feb  5 11:23 sort_list
+drwxr-xr-x  3 deepthought  deepthought   102 Feb  5 11:23 union
+
+/var/folders/7w/w77kjx197zs4yvlz79rszr2m0000gp/T/tmpuPPWoe/user/aff_a:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1175 Feb  5 11:23 aff_a.c
+
+/var/folders/7w/w77kjx197zs4yvlz79rszr2m0000gp/T/tmpuPPWoe/user/check_mate:
+total 16
+-rw-r--r--  1 deepthought  deepthought  1007 Feb  5 11:23 check_mate.c
+-rw-r--r--  1 deepthought  deepthought  1004 Feb  5 11:23 ft_list.h
+
+/var/folders/7w/w77kjx197zs4yvlz79rszr2m0000gp/T/tmpuPPWoe/user/expand_str:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1696 Feb  5 11:23 expand_str.c
+
+/var/folders/7w/w77kjx197zs4yvlz79rszr2m0000gp/T/tmpuPPWoe/user/flood_fill:
+total 16
+-rw-r--r--  1 deepthought  deepthought  993 Feb  5 11:23 flood_fill.c
+-rw-r--r--  1 deepthought  deepthought  184 Feb  5 11:23 t_point.h
+
+/var/folders/7w/w77kjx197zs4yvlz79rszr2m0000gp/T/tmpuPPWoe/user/repeat_alpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1287 Feb  5 11:23 repeat_alpha.c
+
+/var/folders/7w/w77kjx197zs4yvlz79rszr2m0000gp/T/tmpuPPWoe/user/sort_list:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1126 Feb  5 11:23 sort_list.c
+
+/var/folders/7w/w77kjx197zs4yvlz79rszr2m0000gp/T/tmpuPPWoe/user/union:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1578 Feb  5 11:23 union.c
+ 
+= sort_list ====================================================================
+$> gcc -Wextra -Wall -Werror sort_list.c main.c -o user_exe 
+sort_list.c:17:1: error: unknown type name 't_list'
+t_list          *sort_list(t_list* lst, int (*cmp)(int, int))
+^
+sort_list.c:17:20: error: unknown type name 't_list'
+t_list          *sort_list(t_list* lst, int (*cmp)(int, int))
+                           ^
+sort_list.c:19:2: error: use of undeclared identifier 't_list'
+        t_list          *one;
+        ^
+sort_list.c:19:11: error: use of undeclared identifier 'one'
+        t_list          *one;
+                         ^
+sort_list.c:20:2: error: use of undeclared identifier 't_list'
+        t_list          *two;
+        ^
+sort_list.c:20:11: error: use of undeclared identifier 'two'
+        t_list          *two;
+                         ^
+sort_list.c:22:2: error: use of undeclared identifier 'one'
+        one = lst;
+        ^
+sort_list.c:23:2: error: use of undeclared identifier 'two'
+        two = lst->next;
+        ^
+sort_list.c:24:14: error: use of undeclared identifier 'next'
+        return (lst-next);
+                    ^
+9 errors generated.
+
+Could not compile 'user_exe'
+Grade: 0
+
+= Final grade: 0 ===============================================================

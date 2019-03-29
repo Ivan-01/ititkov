@@ -1,0 +1,29 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r5p25.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Feb 12 09:16:26 PST 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190212/ititkov
+= Collected files ==========================================
+$> ls -lAR /var/folders/wd/7lcp3rfx6r5cfm203tzq6qm40000gp/T/tmpItlwiS/user
+ 
+= aff_last_param ===============================================================
+Nothing turned in
+Grade: 0
+
+= Final grade: 0 ===============================================================

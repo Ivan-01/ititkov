@@ -1,0 +1,65 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z1r6p25.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Jan 29 10:56:46 PST 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190129/ititkov
+
+= Git history ==================================================================
+$> git -C /var/folders/y1/xn32kf6914b6pr52xg750yp40000gp/T/tmpeaMz8d/user log --pretty='%H - %an, %ad : %s'
+e4d2083b4e8e4e8ee684daf6b19f1d53214aaedd - Exam 42, Tue Jan 29 10:56:35 2019 -0800 : reverse_bits
+46d8fd63455dea6e61d93061f99ed47aacfa1d6e - Exam 42, Tue Jan 29 10:26:36 2019 -0800 : last_word
+355c85532a55ef71f52bcfece74cfcbe670c8b30 - Exam 42, Tue Jan 29 09:20:36 2019 -0800 : rot_13
+6d7e4e6a88b346f1f91c10e283c7c25e0ed0e01e - Exam 42, Tue Jan 29 09:05:59 2019 -0800 : qqq
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/y1/xn32kf6914b6pr52xg750yp40000gp/T/tmpeaMz8d/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  957 Jan 29 10:56 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Jan 29 10:56 ft_countdown
+drwxr-xr-x  3 deepthought  deepthought  102 Jan 29 10:56 last_word
+drwxr-xr-x  3 deepthought  deepthought  102 Jan 29 10:56 reverse_bits
+drwxr-xr-x  3 deepthought  deepthought  102 Jan 29 10:56 rot_13
+
+/var/folders/y1/xn32kf6914b6pr52xg750yp40000gp/T/tmpeaMz8d/user/ft_countdown:
+total 8
+-rw-r--r--  1 deepthought  deepthought  977 Jan 29 10:56 ft_countdown.c
+
+/var/folders/y1/xn32kf6914b6pr52xg750yp40000gp/T/tmpeaMz8d/user/last_word:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1656 Jan 29 10:56 last_word.c
+
+/var/folders/y1/xn32kf6914b6pr52xg750yp40000gp/T/tmpeaMz8d/user/reverse_bits:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1085 Jan 29 10:56 reverse_bits.c
+
+/var/folders/y1/xn32kf6914b6pr52xg750yp40000gp/T/tmpeaMz8d/user/rot_13:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1294 Jan 29 10:56 rot_13.c
+ 
+= reverse_bits =================================================================
+$> gcc -Wextra -Wall -Werror main.c reverse_bits.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./zn4f41jbq9ytl9h9cibpepa6
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

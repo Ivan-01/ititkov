@@ -1,0 +1,35 @@
+(function(g){var window=this;var Z3=function(a){g.oC.call(this,{B:"div",G:"ytp-miniplayer-ui"});this.player=a;this.F=!1;this.D=this.u=this.i=void 0;this.J(a,"minimized",this.dI);this.J(a,"onStateChange",this.dL)},$3=function(a){g.rK.call(this,a);
+this.g=new Z3(this.player);this.g.hide();g.fK(this.player,this.g.element,4);a.app.F.g&&(this.load(),g.K(a.getRootNode(),"ytp-player-minimized",!0))};
+g.r(Z3,g.oC);g.h=Z3.prototype;
+g.h.show=function(){this.i=new g.Oo(this.tE,null,this);this.i.start();if(!this.F){this.C=new g.xV(this.player,this);g.H(this,this.C);g.fK(this.player,this.C.element,4);this.C.u=.6;this.O=new g.zU(this.player);g.H(this,this.O);this.A=new g.T({B:"div",G:"ytp-miniplayer-scrim"});g.H(this,this.A);this.A.Y(this.element);this.J(this.A.element,"click",this.Vx);var a=new g.T({B:"button",V:["ytp-miniplayer-close-button","ytp-button"],L:{"aria-label":"Close"},I:[g.$O()]});g.H(this,a);a.Y(this.A.element);this.J(a.element,
+"click",this.uw);this.o=new g.T({B:"div",G:"ytp-miniplayer-controls"});g.H(this,this.o);this.o.Y(this.A.element);this.J(this.o.element,"click",this.Vx);var b=new g.T({B:"div",G:"ytp-miniplayer-button-container"});g.H(this,b);b.Y(this.o.element);a=new g.T({B:"div",G:"ytp-miniplayer-play-button-container"});g.H(this,a);a.Y(this.o.element);var c=new g.T({B:"div",G:"ytp-miniplayer-button-container"});g.H(this,c);c.Y(this.o.element);this.K=new g.GS(this.player,this,!1);g.H(this,this.K);this.K.Y(b.element);
+b=new g.DS(this.player,this);g.H(this,b);b.Y(a.element);this.H=new g.GS(this.player,this,!0);g.H(this,this.H);this.H.Y(c.element);this.D=new g.TT(this.player,this);g.H(this,this.D);this.D.Y(this.A.element);this.u=new g.MS(this.player,this);g.H(this,this.u);g.fK(this.player,this.u.element,4);this.l=new g.T({B:"div",G:"ytp-miniplayer-buttons"});g.H(this,this.l);g.fK(this.player,this.l.element,4);this.l.hide();a=new g.T({B:"button",V:["ytp-miniplayer-close-button","ytp-button"],L:{"aria-label":"Close"},
+I:[g.$O()]});g.H(this,a);a.Y(this.l.element);this.J(a.element,"click",this.uw);a=new g.T({B:"button",V:["ytp-miniplayer-replay-button","ytp-button"],L:{"aria-label":"Close"},I:[g.mP()]});g.H(this,a);a.Y(this.l.element);this.J(a.element,"click",this.fJ);this.J(this.player,"presentingplayerstatechange",this.uE);this.J(this.player,"appresize",this.nb);this.J(this.player,"fullscreentoggled",this.nb);this.nb();this.F=!0}0!=this.player.getPlayerState()&&g.oC.prototype.show.call(this);this.u.show();this.player.unloadModule("annotations_module")};
+g.h.hide=function(){this.i&&(this.i.dispose(),this.i=void 0);g.oC.prototype.hide.call(this);this.player.app.F.g||(this.F&&this.u.hide(),this.player.loadModule("annotations_module"))};
+g.h.T=function(){this.i&&(this.i.dispose(),this.i=void 0);g.oC.prototype.T.call(this)};
+g.h.uw=function(){this.player.stopVideo();this.player.ma("onCloseMiniplayer")};
+g.h.fJ=function(){this.player.playVideo()};
+g.h.Vx=function(a){if(a.target==this.A.element||a.target==this.o.element)g.P(g.W(this.player).experiments,"kevlar_miniplayer_scrim_pause")?2==this.player.getPlayerState()?this.player.playVideo():this.player.pauseVideo():this.player.ma("onExpandMiniplayer")};
+g.h.dI=function(){g.K(this.player.getRootNode(),"ytp-player-minimized",this.player.app.F.g);this.player.app.F.g&&0==this.player.getPlayerState()?this.l.show():this.l.hide()};
+g.h.tE=function(){this.u.ed();this.D.ed();this.i&&this.i.start()};
+g.h.uE=function(a){g.U(a.state,32)&&this.C.hide()};
+g.h.nb=function(){var a=this.u,b=g.QJ(this.player).getPlayerSize().width;a.Fa=0;a.u=b;a.C=!1;g.OS(a)};
+g.h.dL=function(a){this.player.app.F.g&&(0==a?(this.hide(),this.l.show()):(this.show(),this.l.hide()))};
+g.h.bb=function(){return this.C};
+g.h.ec=function(){return!1};
+g.h.rj=function(){return!1};
+g.h.Bh=function(){return!1};
+g.h.ez=function(){};
+g.h.Li=function(){};
+g.h.Uk=function(){};
+g.h.Xl=function(){return null};
+g.h.kq=function(){return new g.bi(0,0,0,0)};
+g.h.handleGlobalKeyDown=function(){return!1};
+g.h.handleGlobalKeyUp=function(){return!1};
+g.h.zm=function(a,b,c,d,e){a.style.left="";a.style.top="";a.style.bottom="";d=g.Gi(a);var f=g.QJ(this.player).getPlayerSize().width;b&&["ytp-prev-button","ytp-next-button"].some(function(a){return g.Go(b,a)})?(c=12,a.style.top=12+(e||0)+"px"):(c-=d.width/2,a.style.bottom=25+(e||0)+"px");
+a.style.left=g.Sd(c,0,f-d.width)+"px"};
+g.h.showControls=function(){};
+g.h.lq=function(){};
+g.h.mh=function(){};g.r($3,g.rK);$3.prototype.init=function(){};
+$3.prototype.load=function(){this.player.hideControls();this.g.show()};
+$3.prototype.unload=function(){this.player.showControls();this.g.hide()};g.vU.miniplayer=$3;})(_yt_player);
